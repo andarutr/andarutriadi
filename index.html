@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Andaru Triadi</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.webp">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/navber.css" />
+    <link rel="stylesheet" href="assets/css/meanmenu.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.min.css" />
+</head>
+<body>
+    <header class="main_header_arae">
+        <div class="navbar-area">
+            <div class="main-responsive-nav">
+                <div class="container">
+                    <div class="main-responsive-menu">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="assets/img/logo.webp" alt="logo" width="50">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-navbar">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/img/logo.webp" alt="logo" width="80">
+                        </a>
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link click_menu" id="Beranda">Beranda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link click_menu" id="Portfolio">Portfolio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link click_menu" id="Sertifikat">Sertifikat</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link click_menu">
+                                        Layanan
+                                        <i class="fas fa-angle-down"></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link click_menu" id="Teman Skripsi">Teman Skripsi</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link click_menu" id="Kontak">Kontak</a>
+                                </li>
+                            </ul>
+                            <div class="others-options d-flex align-items-center">
+                                <div class="option-item">
+                                    <a href="assets/CV Andaru Triadi.pdf" class="btn btn_navber">Download CV</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content"></div>
+
+    <!-- Copyright Area -->
+    <h5 class="text-center">Coding With ❤️</h5>
+    <br>
+    
+    <!-- JS -->
+    <script>
+        $(document).ready(function(){
+            $('.click_menu').click(function(){
+                let menu = $(this).attr('id');
+                if(menu == 'Beranda'){
+                    $('.content').load('beranda.html');
+                }else if(menu == 'Portfolio'){
+                    $('.content').load('portfolio.html');
+                }else if(menu == 'Sertifikat'){
+                    $('.content').load('sertifikat.html');
+                }else if(menu == 'Teman Skripsi'){
+                    $('.content').load('teman_skripsi.html');
+                }else if(menu == 'Kontak'){
+                    $('.content').load('kontak.html');
+                }
+            });
+            
+            $('.content').load('beranda.html');
+        });
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/lightbox.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/jquery.meanmenu.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>

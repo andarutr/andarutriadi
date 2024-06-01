@@ -350,24 +350,30 @@
     <script src="assets/js/moment.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
-        $.getJSON('assets/json/certificates.json', function(data){
-            $.each(data, function(index,item){
-                $('#certificate').append(`
-                <div class="col-lg-3 co-md-6 col-sm-12 col-6 mt-2">
-                    <div class="card shadow">
-                        <div class="card-body text-center">
-                            <div class="gallery_item">
-                                <a href="${item.picture}" data-fancybox="gallery">
-                                    <img src="${item.picture}" alt="img">
-                                </a>
-                            </div>
-                                <a href="${item.url}" class="btn btn-sm btn-primary mb-2"><i class="fab fa-github"></i> Project</a>
+    $.getJSON('assets/json/certificates.json', function(data){
+        $.each(data, function(index,item){
+            $('#certificate').append(`
+            <div class="col-lg-3 co-md-6 col-sm-12 col-6 mt-2">
+                <div class="card shadow">
+                    <div class="card-body text-center">
+                        <div class="gallery_item">
+                            <img src="${item.picture}" alt="img" class="imgUrl" style="cursor: pointer">
                         </div>
+                            <a href="${item.url}" class="btn btn-sm btn-primary mb-2"><i class="fab fa-github"></i> Project</a>
                     </div>
                 </div>
-                `);
-            });
+            </div>
+            `);
         });
+    });
+
+    $(document).on("click", ".imgUrl", function(){
+        let url = $(this).attr("src");
+        var left = (screen.width - 600) / 2; 
+        var top = (screen.height - 400) / 2; 
+
+        window.open(url, "", "location=no, height=650, width=750, left=" + left + ", top="+top)
+    })
     </script>
 </body>
 </html>

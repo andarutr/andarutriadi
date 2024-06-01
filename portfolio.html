@@ -24,6 +24,10 @@
         background-color: #0056b3;
         border-color: #0056b3;
     }
+
+    .imgUrl{
+        cursor: pointer
+    }
     </style>
 </head>
 <body>
@@ -113,9 +117,7 @@
                                 <div class="details_text_wrapper">
                                     <a href="#" class="tags_noted">`+ moment(`${item.created_at}`).format('D MMMM YYYY') + `</a>
                                     <h2>${item.title}</h2>
-                                    <a data-fslightbox="gallery" href="assets/img/portfolio/${item.picture}">
-                                        <img src="assets/img/portfolio/${item.picture}" class="img-fluid rounded mt-3 mb-3" alt="img">
-                                    </a>
+                                    <img src="assets/img/portfolio/${item.picture}" class="img-fluid rounded imgUrl mt-3 mb-3" alt="img">
                                     <span class="badge bg-primary">Bootstrap</span>
                                     <span class="badge bg-danger">Laravel</span>
                                     <span class="badge bg-warning">MySQL</span>
@@ -128,36 +130,28 @@
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="details_small_img">
                                                 <div class="gallery_item">
-                                                    <a data-fslightbox="gallery" href="assets/img/portfolio/${item.ss_1}">
-                                                        <img src="assets/img/portfolio/${item.ss_1}" alt="img">
-                                                    </a>
+                                                    <img src="assets/img/portfolio/${item.ss_1}" alt="img" class="imgUrl">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="details_small_img">
                                                 <div class="gallery_item">
-                                                    <a data-fslightbox="gallery" href="assets/img/portfolio/${item.ss_2}">
-                                                        <img src="assets/img/portfolio/${item.ss_2}" alt="img">
-                                                    </a>
+                                                    <img src="assets/img/portfolio/${item.ss_2}" alt="img" class="imgUrl">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="details_small_img">
                                                 <div class="gallery_item">
-                                                    <a data-fslightbox="gallery" href="assets/img/portfolio/${item.ss_3}">
-                                                        <img src="assets/img/portfolio/${item.ss_3}" alt="img">
-                                                    </a>
+                                                    <img src="assets/img/portfolio/${item.ss_3}" alt="img" class="imgUrl">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="details_small_img">
                                                 <div class="gallery_item">
-                                                    <a data-fslightbox="gallery" href="assets/img/portfolio/${item.ss_4}">
-                                                        <img src="assets/img/portfolio/${item.ss_4}" alt="img">
-                                                    </a>
+                                                    <img src="assets/img/portfolio/${item.ss_4}" alt="img" class="imgUrl">
                                                 </div>
                                             </div>
                                         </div>
@@ -204,6 +198,14 @@
 
             createPagination(data);
         });
+
+        $(document).on("click", ".imgUrl", function(){
+            let url = $(this).attr("src");
+            var left = (screen.width - 600) / 2; 
+            var top = (screen.height - 400) / 2; 
+
+            window.open(url, "", "location=no, height=650, width=750, left=" + left + ", top="+top)
+        })
     });
     </script>
 </body>
